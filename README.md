@@ -7,5 +7,7 @@ rust template
 vared -p 'package name: ' -c package \
     && git clone -- git@github.com:hrls/rt.git ${package} \
     && cd ${package} \
-    && cargo init --name $(basename $PWD) --bin -- $PWD
+    && cargo init --name $(basename $PWD) --bin -- $PWD \
+    && cargo test \
+    && cargo run
 ```
